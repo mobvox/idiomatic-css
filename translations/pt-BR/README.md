@@ -1,29 +1,17 @@
 # Princípios para escrever CSS de forma consistente e idiomática
 
-O documento a seguir descreve um sensato guia de estilo para desenvolvimento
-CSS.  Não pretendo ser prescritivo e não quero impor as minhas preferências de
-estilo no código de outras pessoas. Entretanto, estas orientações incentivam
-fortemente o uso de existentes, comuns e sensatos padrões.
-
-Esse é um documento vivo e novas ideias são sempre bem-vindas. Por favor
-contribua.
-
-[Idiomatic CSS em Inglês (Original)](https://github.com/necolas/idiomatic-css)
-
+Este documento é um guia de estilos para ser utilizado para projetos da MobVox.
 
 ## Índice
 
 1. [Princípios gerais](#general-principles)
 2. [Espaços em branco](#whitespace)
-3. [Comentários](#comments)
-4. [Formatação](#format)
-5. [Nomeando](#naming)
-6. [Exemplo prático](#example)
-7. [Organização](#organization)
-8. [Build e deploy](#build-and-deployment)
+3. [Formatação](#format)
+4. [Nomeando](#naming)
+5. [Exemplo prático](#example)
+6. [Organização](#organization)
 
 [Agradecimentos](#acknowledgements)
-
 
 <a name="general-principles"></a>
 ## 1. Princípios gerais
@@ -56,68 +44,8 @@ Dica: configure seu editor para "mostrar invisíveis". Isso irá permitir que
 você elimine espaços em branco da quebra de linha, elimine espaços em branco de
 linhas vazias sem indentação e evite commits poluídos.
 
-
-<a name="comments"></a>
-## 3. Comentários
-
-Código bem comentado é extremamente importante. Tire tempo para descrever
-componentes, como eles funcionam, suas limitações, e o modo como são
-construídos. Não deixe outros no time adivinharem o propósito de códigos
-incomuns ou não óbvios.
-
-Estilo de comentário deve ser simples e consistente dentro de uma única base de
-código.
-
-* Coloque comentários em uma nova linha acima do seu assunto.
-* Evite comentários no fim da linha.
-* Mantenha o comprimento da linha a um máximo sensível, por exemplo, 80
-  colunas.
-* Faça o uso liberal de comentários para quebrar o código CSS em seções
-  distintas.
-* Use comentários com iniciais maiúsculas e indentação de texto consistente.
-
-Dica: configure seu editor para lhe prover com atalhos a geração do padrão de
-comentários acordado.
-
-#### exemplo com CSS:
-
-```css
-/* ==========================================================================
-   Bloco de comentário de seção
-   ========================================================================== */
-
-/* Bloco de comentário de sub-seção
-   ========================================================================== */
-
-/*
- * Bloco de comentário de grupo
- * Ideal para explicações em múltiplas linhas e documentação.
- */
-
-/* Comentário básico */
-```
-
-#### exemplo com SCSS:
-
-```scss
-// ==========================================================================
-// Bloco de comentário de seção
-// ==========================================================================
-
-// Bloco de comentário de sub-seção
-// ==========================================================================
-
-//
-// Bloco de comentário de grupo
-// Ideal para explicações em múltiplas linhas e documentação.
-//
-
-// Comentário básico
-```
-
-
 <a name="format"></a>
-## 4. Formatação
+## 3. Formatação
 
 O formato de código escolhido deve garantir que o código seja: fácil de ler;
 fácil de comentar claramente; minimize a chance de introduzir erros
@@ -147,32 +75,6 @@ acidentalmente; e resulte em úteis visualizações de diferença.
     background: #fff;
 }
 ```
-
-#### Ordem de declaração
-
-Declarações devem ser ordenadas segundo um único princípio. Minha preferência é
-por propriedades relacionadas para serem agrupadas e por propriedades
-estruturalmente importantes (por exemplo, posicionamento e box-model) para
-serem declaradas antes de propriedades tipográficas, fundo ou cor.
-
-```css
-.selector {
-    position: relative;
-    display: block;
-    width: 50%;
-    height: 100px;
-    padding: 10px;
-    border: 0;
-    margin: 10px;
-    color: #fff
-    background: #000;
-}
-```
-
-Ordenação alfabética também é popular, mas a desvantagem é que ela separa as
-propriedades relacionadas. Por exemplo, deslocamentos de posição não são mais
-agrupados e propriedades do box-model podem acabar propagando ao longo de um
-bloco de declaração.
 
 #### Exceções e ligeiros desvios
 
@@ -243,9 +145,8 @@ são em referência ao Sass.
 }
 ```
 
-
 <a name="naming"></a>
-## 5. Nomeando
+## 4. Nomeando
 
 Você não é um compilador/compressor de código humano, então não tente ser.
 
@@ -277,7 +178,7 @@ CSS.
 
 
 <a name="example"></a>
-## 6. Exemplo prático
+## 5. Exemplo prático
 
 Um exemplo de várias convenções.
 
@@ -346,7 +247,7 @@ Um exemplo de várias convenções.
 
 
 <a name="organization"></a>
-## 7. Organização
+## 6. Organização
 
 Organização de código é uma importante parte de qualquer base de código CSS, e
 crucial para grandes bases de código.
@@ -356,16 +257,6 @@ crucial para grandes bases de código.
   dividir código para componentes distintos.
 * Se estiver usando um pré-processador, abstrair partes comuns de código em
   variáveis para cor, tipografia, etc.
-
-
-<a name="build-and-deployment"></a>
-## 8. Build e deploy
-
-Os projetos devem sempre tentar incluir alguns meios genéricos pelos quais sua
-fonte possa ser avaliada, testada, comprimida e versionada em preparação para
-uso em produção.  Para essa tarefa, o [grunt](https://github.com/cowboy/grunt)
-por Ben Alman é uma excelente ferramenta.
-
 
 <a name="acknowledgements"></a>
 ## Agradecimentos
